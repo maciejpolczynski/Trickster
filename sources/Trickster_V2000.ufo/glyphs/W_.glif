@@ -67,6 +67,8 @@
   </outline>
   <lib>
     <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2018-04-05 20:40:46 +0000</string>
       <key>com.typemytype.robofont.guides</key>
       <array>
         <dict>
@@ -76,8 +78,6 @@
           <false/>
           <key>magnetic</key>
           <integer>5</integer>
-          <key>name</key>
-          <string></string>
           <key>x</key>
           <integer>594</integer>
           <key>y</key>

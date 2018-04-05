@@ -2409,6 +2409,11 @@
 		<key>x</key>
 		<integer>-40</integer>
 	</dict>
+	<key>lslash</key>
+	<dict>
+		<key>@MMK_R_a</key>
+		<integer>40</integer>
+	</dict>
 	<key>nine</key>
 	<dict>
 		<key>@MMK_R__pontu_dot</key>

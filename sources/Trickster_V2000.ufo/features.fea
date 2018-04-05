@@ -1,12 +1,15 @@
+@No_desc = [ a a.ss04 b c d e e.swsh h i k k.ss01 l m n o r r.ss02 r.calt s s.ss04 t u v w x z ae oe lslash oslash eth dotlessi aacute acircumflex adieresis agrave aring atilde abreve amacron cacute ccaron ccircumflex cdotaccent dcaron dcroat eacute ecircumflex edieresis egrave ebreve ecaron edotaccent emacron hbar hcircumflex iacute icircumflex idieresis igrave ibreve i.dot imacron itilde lacute lcaron ntilde nacute ncaron oacute ocircumflex odieresis ograve otilde obreve ohungarumlaut omacron racute rcaron scaron sacute scircumflex tbar tcaron uacute ucircumflex udieresis ugrave ubreve uhungarumlaut umacron uring utilde wacute wcircumflex wdieresis wgrave zcaron zacute zdotaccent ];
+
+@alll = [ a a.ss04 b c c.ss02 d e e.ss02 f f.ss02 g g.ss02 h i j k l m n o o.ss02 p q r r.ss02 r.calt s s.ss04 s.ss02 t t.swsh u v w x y y.swsh z ae oe lslash oslash eth thorn germandbls dotlessi dotlessj fi fl aacute acircumflex adieresis agrave aring atilde abreve amacron aogonek ccedilla cacute ccaron ccircumflex cdotaccent dcaron dcroat eacute ecircumflex edieresis egrave ebreve ecaron edotaccent emacron eogonek gbreve gcircumflex gcommaaccent gdotaccent hbar hcircumflex iacute icircumflex idieresis igrave ibreve i.dot imacron iogonek itilde jcircumflex ij kcommaaccent lacute lcaron lcommaaccent ldot ntilde nacute ncaron ncommaaccent oacute ocircumflex odieresis ograve otilde obreve ohungarumlaut omacron racute rcaron rcommaaccent scaron sacute scedilla scircumflex uni0219 tbar tcaron uni0163 uni021B uacute ucircumflex udieresis ugrave ubreve uhungarumlaut umacron uogonek uring utilde wacute wcircumflex wdieresis wgrave yacute ydieresis ycircumflex ygrave zcaron zacute zdotaccent ];
+
+# Prefix: Languagesystems
 languagesystem DFLT dflt;
 languagesystem latn dflt;
 languagesystem latn AZE ;
 languagesystem latn TRK ;
 languagesystem latn MOL ;
 languagesystem latn ROM ;
-
-@No_desc = [ a a.ss04 b c d e e.swsh h i k k.ss01 l m n o r r.ss02 r.calt s s.ss04 t u v w x z ae oe lslash oslash eth dotlessi aacute acircumflex adieresis agrave aring atilde abreve amacron cacute ccaron ccircumflex cdotaccent dcaron dcroat eacute ecircumflex edieresis egrave ebreve ecaron edotaccent emacron hbar hcircumflex iacute icircumflex idieresis igrave ibreve i.dot imacron itilde lacute lcaron ntilde nacute ncaron oacute ocircumflex odieresis ograve otilde obreve ohungarumlaut omacron racute rcaron scaron sacute scircumflex tbar tcaron uacute ucircumflex udieresis ugrave ubreve uhungarumlaut umacron uring utilde wacute wcircumflex wdieresis wgrave zcaron zacute zdotaccent ];
-@alll = [a a.ss04 b c c.ss02 d e e.ss02 f f.ss02 g g.ss02 h i j k l m n o o.ss02 p q r r.ss02 r.calt s s.ss04 s.ss02 t t.swsh u v w x y y.swsh z ae oe lslash oslash eth thorn germandbls dotlessi dotlessj fi fl aacute acircumflex adieresis agrave aring atilde abreve amacron aogonek ccedilla cacute ccaron ccircumflex cdotaccent dcaron dcroat eacute ecircumflex edieresis egrave ebreve ecaron edotaccent emacron eogonek gbreve gcircumflex gcommaaccent gdotaccent hbar hcircumflex iacute icircumflex idieresis igrave ibreve i.dot imacron iogonek itilde jcircumflex ij kcommaaccent lacute lcaron lcommaaccent ldot ntilde nacute ncaron ncommaaccent oacute ocircumflex odieresis ograve otilde obreve ohungarumlaut omacron racute rcaron rcommaaccent scaron sacute scedilla scircumflex uni0219 tbar tcaron uni0163 uni021B uacute ucircumflex udieresis ugrave ubreve uhungarumlaut umacron uogonek uring utilde wacute wcircumflex wdieresis wgrave yacute ydieresis ycircumflex ygrave zcaron zacute zdotaccent ];
+languagesystem latn PLK ;
 
 feature locl {
 script latn;
@@ -22,30 +25,33 @@ language MOL  exclude_dflt; # Moldavian
 language ROM exclude_dflt; # Romanian
         sub scedilla by uni0219;
         sub Scedilla by uni0218;
-}locl;
+language PLK exclude_dflt; # Polish
+		sub quotedblleft by quotedblleft.PLK;
+} locl;
 
-    
 feature calt {
     sub r' [f f.ss02 fl fi] by r.calt;
-    }calt;
+    
+} calt;
 
 feature liga {
     sub i f i by i_f_i;
     sub i f by i_f;
     sub f i by fi;
     sub f l by fl;
-    }liga;
+    
+} liga;
 
-feature ss01{    
+feature ss01 {
+    
     featureNames{
 	name 1 "Boring forms";
 	name 3 "Boring forms";
     };
     sub f by f.ss01;
-}ss01;
+} ss01;
 
-
-feature ss02{
+feature ss02 {
             featureNames{
 	name 1 "Burger s, smoky f";
 	name 3 "Burger s, smoky f";
@@ -54,10 +60,13 @@ feature ss02{
     sub f by f.ss02;
     sub k by k.ss01;
     sub S by S.alt;
-}ss02;
+    sub eogonek by eogonek.ss02;
+    sub cacute by cacute.ss02;
+    sub oacute by oacute.ss02;
+    
+} ss02;
 
-
-feature ss03{
+feature ss03 {
         featureNames{
 	name 1 "Dripping Blood";
 	name 3 "Dripping Blood";
@@ -69,34 +78,40 @@ feature ss03{
     sub s by s.ss02;
     sub g by g.ss02;
     sub r by r.ss02;
-}ss03;
+} ss03;
 
-
-feature ss04{    
+feature ss04 {
+    
     featureNames{
 	name 1 "Closed a";
 	name 3 "Closed a";
     };
     sub a by a.ss04;
-}ss04;
+    sub K by K.ss04;
+    sub aogonek by aogonek.ss04;
+    sub sacute by sacute.ss04;
+    
+} ss04;
 
-feature ss05{    
+feature ss05 {
+    
     featureNames{
 	name 1 "Alt Ampersand";
 	name 3 "Alt Ampersand";
     };
     sub ampersand by ampersand.alt;
-}ss05;
+} ss05;
 
-feature ss06{    
+feature ss06 {
+    
     featureNames{
 	name 1 "Horny e";
 	name 3 "Horny e";
     };
     sub e by e.swsh;
-}ss06;
+} ss06;
 
-feature swsh{
+feature swsh {
     sub @No_desc y' by y.swsh;
     
     lookup final{
@@ -105,11 +120,10 @@ feature swsh{
         ignore sub k' @alll;
         sub k' by k.swash;
     }final;
-}swsh;
+} swsh;
 
-feature onum{
+feature onum {
     sub [zero one two three four five six seven eight nine ] by [zero.alt one.alt two.alt three.alt four.alt five.alt six.alt seven.alt eight.alt nine.alt ];
-    }onum;
-
-
+    
+} onum;
 

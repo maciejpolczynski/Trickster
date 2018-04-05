@@ -4,16 +4,16 @@
   <unicode hex="0162"/>
   <outline>
     <component base="T"/>
-    <component base="commaaccent" xOffset="104.5"/>
+    <component base="commaaccent" xOffset="104.500"/>
   </outline>
   <lib>
     <dict>
       <key>com.typemytype.robofont.mark</key>
       <array>
-        <real>1.0</real>
-        <real>0.3329411764705883</real>
-        <real>0.30000000000000004</real>
-        <real>1.0</real>
+        <integer>1</integer>
+        <real>0.333</real>
+        <real>0.3</real>
+        <integer>1</integer>
       </array>
     </dict>
   </lib>
